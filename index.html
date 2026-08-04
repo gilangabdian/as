@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scramble Text Hover Demo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .demo-box {
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="demo-box">
+    <p class="text-gray-400 mb-2">Default Hover (Random)</p>
+    <h1 id="demo-default" class="text-4xl font-bold text-blue-400 cursor-pointer hover:text-blue-300 transition-colors">
+      Hover Me Now
+    </h1>
+  </div>
+
+  <div class="demo-box">
+    <p class="text-gray-400 mb-2">Matrix Preset (Left to Right)</p>
+    <h1 id="demo-matrix" class="text-5xl font-extrabold text-green-500 cursor-pointer">
+      Wake up, Neo...
+    </h1>
+  </div>
+
+  <div class="demo-box">
+    <p class="text-gray-400 mb-2">Cyberpunk Preset (Click to Trigger)</p>
+    <h1 id="demo-cyberpunk" class="text-6xl font-black text-pink-500 cursor-pointer uppercase tracking-widest">
+      Night City
+    </h1>
+  </div>
+
+  <div class="demo-box">
+    <p class="text-gray-400 mb-2">Manual Control</p>
+    <h1 id="demo-manual" class="text-3xl font-bold text-yellow-400 mb-4">
+      System Ready
+    </h1>
+    <div class="flex gap-4 justify-center">
+      <button id="btn-play" class="px-4 py-2 bg-yellow-600 hover:bg-yellow-500 rounded text-white font-bold">Play</button>
+      <button id="btn-reset" class="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded text-white font-bold">Reset</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import scramble from './dist/index.mjs';
+
+    // Default
+    scramble('#demo-default');
+
+    // Matrix Preset
+    scramble('#demo-matrix', {
+      preset: 'matrix'
+    });
+
+    // Cyberpunk Preset with Click trigger
+    scramble('#demo-cyberpunk', {
+      preset: 'cyberpunk',
+      trigger: 'click'
+    });
+
+    // Manual Control
+    const manualAnim = scramble('#demo-manual', {
+      trigger: 'manual',
+      duration: 1000,
+      charset: '01',
+      direction: 'right'
+    });
+
+    document.getElementById('btn-play').addEventListener('click', () => manualAnim.play());
+    document.getElementById('btn-reset').addEventListener('click', () => manualAnim.reset());
+  </script>
+</body>
+</html>

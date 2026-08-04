@@ -1,0 +1,46 @@
+{
+  "name": "as",
+  "version": "1.0.0",
+  "description": "A lightweight, framework-agnostic scramble text hover library",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "scramble",
+    "text",
+    "hover",
+    "animation",
+    "hacker",
+    "cyberpunk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsdown": "latest",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.2"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.18.0",
+      "onFail": "download"
+    }
+  }
+}
