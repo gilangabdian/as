@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { scramble } from "as";
+import { scramble } from "as-scramble";
 import { Copy, Terminal, Check, Play, RotateCcw } from "lucide-react";
 import Link from "next/link";
 

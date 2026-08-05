@@ -22,15 +22,15 @@ If those don't suit your taste, you can also create your own custom settings.
 
 
 ```bash
-npm install as
+npm install as-scramble
 ```
 
 ```bash
-pnpm add as
+pnpm add as-scramble
 ```
 
 ```bash
-yarn add as
+yarn add as-scramble
 ```
 
 ## Quick Start
@@ -106,7 +106,7 @@ Because `as` is purely vanilla JavaScript, it works seamlessly anywhere. You jus
 ### React / Next.js
 ```tsx
 import { useEffect, useRef } from 'react';
-import { scramble } from 'as';
+import { scramble } from 'as-scramble';
 
 export default function App() {
   const textRef = useRef(null);
@@ -128,7 +128,7 @@ export default function App() {
 ```vue
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import { scramble } from 'as';
+import { scramble } from 'as-scramble';
 
 const textRef = ref(null);
 let anim;
@@ -151,7 +151,7 @@ onUnmounted(() => {
 ```svelte
 <script>
   import { onMount } from 'svelte';
-  import { scramble } from 'as';
+  import { scramble } from 'as-scramble';
 
   let textRef;
 
