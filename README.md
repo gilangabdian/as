@@ -1,6 +1,6 @@
 # as aka a Scramble
-[![NPM Version](https://img.shields.io/npm/v/as.svg)](https://www.npmjs.com/package/as)
-[![Bundle Size](https://img.shields.io/bundlephobia/minzip/as)](https://bundlephobia.com/package/as)
+[![NPM Version](https://img.shields.io/npm/v/as-scramble.svg)](https://www.npmjs.com/package/as-scramble)
+[![Bundle Size](https://img.shields.io/bundlephobia/minzip/as-scramble)](https://bundlephobia.com/package/as-scramble)
 
 ![alt text](playground/public/as.png)
 
