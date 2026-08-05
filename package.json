@@ -29,8 +29,8 @@
     "hacker",
     "cyberpunk"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Gilang Abdian",
+  "license": "MIT",
   "devDependencies": {
     "tsdown": "latest",
     "tslib": "^2.8.1",
