@@ -2,7 +2,7 @@
 [![NPM Version](https://img.shields.io/npm/v/as-scramble.svg)](https://www.npmjs.com/package/as-scramble)
 [![Bundle Size](https://img.shields.io/bundlephobia/minzip/as-scramble)](https://bundlephobia.com/package/as-scramble)
 
-![alt text](playground/public/as.png)
+![alt text](https://raw.githubusercontent.com/gilangabdian/as/main/playground/public/as.png)
 
 `as` is a very lightweight text animation library, with no dependencies. It is under 2KB in size.
 
@@ -68,7 +68,7 @@ Since you are using standard JavaScript here, you need to import it from `node_m
 After importing it, you need to use `scramble`, which takes two parameters: the first is the element to which you want to apply the scramble effect, and the second is an object.
 
 here is the result:
-![alt video](playground/public/result.gif)
+![alt video](https://raw.githubusercontent.com/gilangabdian/as/main/playground/public/result.gif)
 
 ## API Reference
 You can pass an optional configuration object as the second parameter to customize the animation.
