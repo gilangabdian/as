@@ -29,6 +29,7 @@ export default function Home() {
   const [customCharset, setCustomCharset] = useState("01");
   const [customPreset, setCustomPreset] = useState<"none" | "hacker" | "matrix" | "terminal" | "cyberpunk">("none");
   const [customEasing, setCustomEasing] = useState<"linear" | "easeIn" | "easeOut" | "easeInOut">("linear");
+  const [customTrigger, setCustomTrigger] = useState<"auto" | "hover" | "click" | "focus" | "manual">("manual");
 
   // Boolean Toggles
   const [customLoop, setCustomLoop] = useState(false);
@@ -70,7 +71,7 @@ export default function Home() {
       playgroundRef.current.innerText = customText;
 
       const config: Record<string, unknown> = {
-        trigger: "manual",
+        trigger: customTrigger,
         duration: customDuration,
         delay: customDelay,
         direction: customDirection,
@@ -99,6 +100,7 @@ export default function Home() {
     customCharset,
     customPreset,
     customEasing,
+    customTrigger,
     customLoop,
     customPreserveSpaces,
     customPreserveSymbols,
@@ -256,7 +258,8 @@ export default function Home() {
               <div className="w-full h-full max-h-[350px] overflow-y-auto mb-16 custom-scrollbar flex items-center justify-center">
                 <h2
                   ref={playgroundRef}
-                  className="text-3xl md:text-5xl font-black font-mono text-white text-center break-words whitespace-pre-wrap leading-tight z-10 w-full">
+                  tabIndex={0}
+                  className="text-3xl md:text-5xl font-black font-mono text-white text-center break-words whitespace-pre-wrap leading-tight z-10 w-full focus:outline-none">
                   {customText}
                 </h2>
               </div>
@@ -351,6 +354,21 @@ export default function Home() {
                     <option value="easeIn">Ease In</option>
                     <option value="easeInOut">Ease In Out</option>
                   </select>
+                </div>
+              </div>
+
+              {/* TRIGGER OPTION */}
+              <div className="flex flex-col gap-2">
+                <label className="text-xs font-bold text-gray-400 uppercase tracking-wider">Trigger</label>
+                <div className="flex rounded-xl overflow-hidden border border-white/10 bg-black/50">
+                  {(["auto", "hover", "click", "focus", "manual"] as const).map((trig) => (
+                    <button
+                      key={trig}
+                      onClick={() => setCustomTrigger(trig)}
+                      className={`flex-1 py-3 text-xs font-mono transition-colors ${customTrigger === trig ? "bg-emerald-500/20 text-emerald-400 font-bold" : "text-gray-500 hover:text-gray-300"}`}>
+                      {trig}
+                    </button>
+                  ))}
                 </div>
               </div>
 
