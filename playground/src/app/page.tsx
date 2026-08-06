@@ -108,9 +108,9 @@ export default function Home() {
 
   const copyInstall = () => {
     const cmds = {
-      npm: "npm i as",
-      pnpm: "pnpm add as",
-      yarn: "yarn add as",
+      npm: "npm i as-scramble",
+      pnpm: "pnpm add as-scramble",
+      yarn: "yarn add as-scramble",
     };
     navigator.clipboard.writeText(cmds[pkgManager]);
     setCopied(true);
@@ -124,9 +124,6 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="font-mono font-bold text-xl text-[#DDDDDD]">&gt; as.js</div>
           <div className="flex gap-4 text-sm text-gray-400 font-mono">
-            <a href="#" className="hover:text-emerald-400 transition-colors">
-              Docs
-            </a>
             <a
               href="https://github.com/gilangabdian/as"
               target="_blank"
@@ -174,7 +171,13 @@ export default function Home() {
               onClick={copyInstall}>
               <div className="flex items-center gap-3 text-emerald-400 font-mono">
                 <Terminal size={18} />
-                <span>{pkgManager === "npm" ? "npm i as" : pkgManager === "pnpm" ? "pnpm add as" : "yarn add as"}</span>
+                <span>
+                  {pkgManager === "npm"
+                    ? "npm i as-scramble"
+                    : pkgManager === "pnpm"
+                      ? "pnpm add as-scramble"
+                      : "yarn add as-scramble"}
+                </span>
               </div>
               {copied ? (
                 <Check size={18} className="text-emerald-400" />
