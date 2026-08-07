@@ -15,6 +15,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "as | Text Scramble Utility",
   description: "The ultimate, zero-dependency text scramble utility.",
+  icons: [{ rel: "icon", url: "/icon.svg" }],
 };
 
 export default function RootLayout({
@@ -25,8 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${jetbrains.variable} antialiased selection:bg-emerald-500/30 selection:text-emerald-100 min-h-screen flex flex-col`}
-      >
+        className={`${inter.variable} ${jetbrains.variable} antialiased selection:bg-emerald-500/30 selection:text-emerald-100 min-h-screen flex flex-col`}>
         {children}
       </body>
     </html>

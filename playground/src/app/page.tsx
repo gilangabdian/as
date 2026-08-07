@@ -29,7 +29,7 @@ export default function Home() {
   const [customCharset, setCustomCharset] = useState("01");
   const [customPreset, setCustomPreset] = useState<"none" | "hacker" | "matrix" | "terminal" | "cyberpunk">("none");
   const [customEasing, setCustomEasing] = useState<"linear" | "easeIn" | "easeOut" | "easeInOut">("linear");
-  const [customTrigger, setCustomTrigger] = useState<"auto" | "hover" | "click" | "focus" | "manual">("manual");
+  const [customTrigger, setCustomTrigger] = useState<"auto" | "hover" | "click" | "focus" | "manual">("hover");
 
   // Boolean Toggles
   const [customLoop, setCustomLoop] = useState(false);
@@ -445,11 +445,13 @@ export default function Home() {
 
       <footer className="w-full border-t border-white/5 py-8 mt-10">
         <div className="max-w-6xl mx-auto px-6 flex items-center gap-4">
-          <Link
-            href="#"
-            className="font-mono text-xs text-gray-500 uppercase tracking-widest cursor-default hover:text-gray-200 transition-colors w-fit">
+          <a
+            href="https://github.com/gilangabdian/as?tab=MIT-1-ov-file"
+            target="_blank"
+            rel="noreferrer"
+            className="font-mono text-xs text-gray-500 uppercase tracking-widest hover:text-gray-200 transition-colors w-fit">
             MIT
-          </Link>
+          </a>
           <span className="text-gray-700">|</span>
           <TimeAgo />
         </div>
